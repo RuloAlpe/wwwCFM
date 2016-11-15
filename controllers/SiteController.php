@@ -19,7 +19,9 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => [
+	                	'logout'
+                ],
                 'rules' => [
                     [
                         'actions' => ['logout'],
@@ -121,5 +123,69 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    
+    public function actionAcercaDe(){
+    	return $this->render('acercaDe');
+    }
+    
+    public function actionIntegrantes(){
+    	return $this->render('integrantes');
+    }
+    
+    public function actionPorQue(){
+    	return $this->render('porQue');
+    }
+    
+    public function actionNuestraTecnologia(){
+    	return $this->render('nuestraTecnologia');
+    }
+    
+    public function actionBases(){
+    	return $this->render('bases');
+    }
+    
+    public function actionHazClick3(){
+    	return $this->render('hazClick3');
+    }
+    
+    public function actionJurado(){
+    	return $this->render('jurado');
+    }
+    
+    public function actionPremios(){
+    	return $this->render('premios');
+    }
+    
+    public function actionGanadores(){
+    	return $this->render('ganadores');
+    }
+    
+    public function actionMenciones(){
+    	return $this->render('menciones');
+    }
+    
+    public function actionBuyTheBook(){
+    	return $this->render('buyTheBook');
+    }
+    
+    public function actionFotosConMedallas(){
+    	return $this->render('fotosConMedallas');
+    }
+    
+    public function actionVideos(){
+    	return $this->render('videos');
+    }
+    
+    public function actionWallpapers(){
+    	return $this->render('wallpapers');
+    }
+    
+    public function actionBlog(){
+    	return $this->render('blog');
+    }
+    
+    public function actionExhibiciones(){
+    	return $this->render('exhibiciones');
     }
 }

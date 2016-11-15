@@ -1,0 +1,549 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	3.0 - Carrusel
+			# Extra
+
+	-----------------------------------------------------------------------------
+	*/
+
+/*  Carrusel
+	================================================ */
+.carrusel
+	background-color: maroon
+	height: calc(100vh - 60px)
+	position: relative
+	width: 100%
+	&.carruseles
+		height: calc(100vh - 130px)
+	// Slider
+	.carrusel-gallery
+		background-color: red
+		height: 100%
+		position: relative
+		width: 100%
+	.carrusel-slider
+		background-color: red
+		display: none
+		height: 100%
+		position: relative
+		width: 100%
+		.carrusel-slider-item
+			background-image: url(../images/item.jpg)
+			background-position: 50%
+			background-repeat: no-repeat
+			background-size: cover
+			height: 100%
+			position: relative
+			width: 100%
+	// Textos
+	.carrusel-textos
+		// background-color: rgba($white,.4)
+		bottom: 60px
+		color: $white
+		position: absolute
+		text-align: right
+		right: 5%
+		z-index: 88
+		// Datos de Persona
+		.carrusel-textos-desc
+			h3
+				font-size: 2.2em
+				font-weight: 300
+				+respond-to(sm)
+					font-size: 1.8em
+				+respond-to(xs)
+					font-size: 1.4em
+				+respond-to(xx)
+					font-size: 1em
+			h4
+				font-size: 2.1em
+				font-weight: 400
+				+respond-to(sm)
+					font-size: 1.7em
+				+respond-to(xs)
+					font-size: 1.3em
+				+respond-to(xx)
+					font-size: .9em
+	// Full Screen
+	.carrusel-textos-full-screen
+		// background-color: red
+		bottom: 170px
+		color: $white
+		position: absolute
+		text-align: right
+		right: 5%
+		z-index: 89
+		+respond-to(sm)
+			bottom: 144px
+		+respond-to(xs)
+			bottom: 130px
+		+respond-to(xx)
+			bottom: 110px
+		span,
+		i
+			display: inline-block
+			vertical-align: middle
+			vertical-align: -webkit-baseline-middle
+		span
+			font-size: .85rem
+			text-transform: uppercase
+		i
+			font-size: 1.4rem
+			margin-left: 8px
+	// Nav
+	.carrusel-nav
+		background-color: rgba($purple-primary,.6)
+		bottom: 0
+		color: $white
+		height: 100%
+		left: 5%
+		max-width: 300px
+		position: absolute
+		top: 0
+		width: 90%
+		z-index: 90
+		+respond-to(sm)
+			left: 2%
+			max-width: 200px
+		+respond-to(xs)
+			left: 0
+			max-width: 200px
+		h2
+			font-size: 3rem
+			font-weight: 300
+			margin-bottom: 20px
+			margin-top: 30px
+			text-align: center
+			+respond-to(sm)
+				font-size: 2.5rem
+			+respond-to(xs)
+				font-size: 1.7rem
+				padding-left: 70px
+				text-align: left
+		.carrusel-nav-ganadores
+			align-items: center
+			display: flex
+			justify-content: space-around
+			margin-bottom: 30px
+			text-align: center
+			i
+				&:first-child
+					margin-right: 6px
+					+respond-to(xs)
+						font-size: .9em
+						margin-right: 2px
+				&:last-child
+					margin-left: 6px
+					+respond-to(xs)
+						font-size: .9em
+						margin-right: 2px
+			p
+				font-size: 1.2em
+				+respond-to(xs)
+					font-size: .84em
+		.carrusel-nav-menu
+			// list-style-type: circle
+			width: 100%
+			li
+				display: block
+				// list-style-position: inside
+				a
+					display: block
+					color: $white
+					padding: 20px 20px 20px 40px
+					position: relative
+					&:hover
+						background-color: rgba($purple-primary,.8)
+						&:before
+							opacity: 1
+							+transition(all 0.3s ease-out)
+					&:before
+						background-color: $white
+						+border-radius(50%)
+						content: ""
+						height: 4px
+						left: 20px
+						margin-top: -2px
+						opacity: 0
+						position: absolute
+						top: 50%
+						width: 4px
+						+transition(all 0.3s ease-in)
+		// Nav movil
+		&.carrusel-nav-movil
+			+transition(all 300ms ease-in-out)
+			transform: translateX(-250px)
+			// Nav movil animacion
+			&.carrusel-nav-movil-anim
+				transform: translateX(0)
+	// Nav Btn movil
+	.carrusel-nav-btn-movil
+		align-items: center
+		background-color: rgba($purple-primary,.6)
+		+border-radius(50%)
+		cursor: pointer
+		display: none
+		height: 40px
+		justify-content: center
+		left: 20px
+		position: absolute
+		top: 20px
+		width: 40px
+		z-index: 92
+		+respond-to(xs)
+			display: flex
+		i
+			color: $white
+			font-size: 1.7em
+	// Paginación
+	.carrusel-pagination
+		// background-color: rgba($white,.6)
+		bottom: 60px
+		display: none
+		left: 50%
+		margin-left: -25%
+		position: absolute
+		text-align: center
+		width: 50%
+		z-index: 89
+		a
+			border: 1px solid $white
+			color: $white
+			display: inline-block
+			font-size: .9rem
+			height: 24px
+			line-height: 24px
+			margin-right: 8px
+			width: 24px
+			&:last-child
+				margin-right: 0
+			&:hover
+				background-color: rgba($white,.3)
+				// color: $purple-primary
+			&.active
+				background-color: $white
+				color: $purple-primary
+	// Bullets
+	.carrusel-bullets
+		background-color: rgba($white,.6)
+		bottom: 30px
+		left: 5%
+		position: absolute
+		text-align: left
+		z-index: 89
+		+respond-to(sm)
+			bottom: 10px
+			left: 50%
+			margin-left: -45%
+			text-align: center
+			width: 90%
+		+respond-to(xs)
+			bottom: 10px
+			left: 50%
+			margin-left: -45%
+			text-align: center
+			width: 90%
+		a
+			background-color: $white
+			// border: 1px solid $white
+			+border-radius(50%)
+			color: $white
+			display: inline-block
+			font-size: .9rem
+			height: 5px
+			// line-height: 24px
+			margin-right: 16px
+			opacity: .4
+			width: 5px
+			&:last-child
+				margin-right: 0
+			// &:hover
+			// 	background-color: rgba($white,.3)
+			// 	// color: $purple-primary
+			&.active
+				opacity: 1
+	// Share
+	.carrusel-share
+		background-color: $purple-primary
+		bottom: 0
+		color: $white
+		left: 0
+		padding: 8px 0
+		position: absolute
+		right: 0
+		text-align: right
+		width: 100%
+		z-index: 90
+		span
+			a
+				color: $white
+				&:hover
+					color: $purple-secundary
+				i
+					margin-left: 10px
+
+	// Lineas
+	.carrusel-lineas
+		background-image: url(../images/lineas/linea-galeria.png)
+		background-position: bottom center
+		background-repeat: no-repeat
+		background-size: cover
+		bottom: 0
+		height: 300px
+		left: 0
+		position: absolute
+		right: 0
+		width: 100%
+		z-index: 20
+
+	// Menciones LOGO
+	.carrusel-menciones
+		// background-color: blue
+		left: 10%
+		position: absolute
+		top: 20%
+		z-index: 70
+
+/*  Componente SLIDER
+	================================================ */
+.page-carrusel
+	height: calc(100vh - 60px)
+	width: 100%
+	position: absolute
+	top: 0
+	left: 0
+	.project 
+		position: absolute
+		width: 100%
+		height: 100%
+		background-position: center
+		background-repeat: no-repeat
+		background-size: cover
+		.text
+			h1
+				font-family: 'besom'
+				font-size: 6em
+				position: absolute
+				top: 50%
+				left: 50%
+				-webkit-transform: translate(-50%, -50%)
+				transform: translate(-50%, -50%)
+				margin: 0
+				display: table
+				text-align: center
+				text-transform: uppercase
+				+respond-to(sm)
+					font-size: 3em
+				+respond-to(xs)
+					font-size: 2.5em
+				+respond-to(xx)
+					font-size: 1.6em
+
+		&:nth-child(1) 
+			z-index: 30
+
+	.arrows
+		// background-color: red
+		position: absolute
+		// bottom: 50px
+		// left: 50%
+		margin-left: -21px
+		text-align: center
+		z-index: 100
+		right: 5%
+		top: 5%
+		.arrow
+			// background-color: orange
+			// float: left
+			cursor: pointer
+			display: inline-block
+			font-size: 1.3em
+			vertical-align: middle
+			&.next 
+				// -webkit-transform: rotate(180deg)
+				// transform: rotate(180deg)
+				// margin-top: -11px
+				margin-left: 20px
+			&:hover.previous 
+				-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				-webkit-transform: translate3d(-5px, 0, 0)
+				transform: translate3d(-5px, 0, 0)
+
+
+			&:hover.next 
+				-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				// -webkit-transform: translate3d(5px, 0, 0) rotate(180deg)
+				// transform: translate3d(5px, 0, 0) rotate(180deg)
+				-webkit-transform: translate3d(5px, 0, 0)
+				transform: translate3d(5px, 0, 0)
+
+
+		.arrow 
+			-webkit-transition: -webkit-transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+			transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+	
+	// Page Inicio
+	&.page-inicio
+		height: calc(100vh - 130px)
+		.project
+			&:after
+				background-image: url(../images/lineas/linea-galeria.png)
+				background-position: bottom center
+				background-repeat: no-repeat
+				background-size: cover
+				bottom: 0
+				content: ""
+				height: 300px
+				left: 0
+				position: absolute
+				right: 0
+				width: 100%
+				z-index: 40
+			.carrusel-textos
+				background-color: rgba(red,.8)
+				bottom: 30px
+				+respond-to(sm)
+					bottom: 40px
+					width: 90%
+				+respond-to(xs)
+					bottom: 40px
+					width: 90%
+				+respond-to(xx)
+					bottom: 50px
+				.carrusel-textos-desc
+					align-items: center
+					display: flex
+					justify-content: center
+					// +respond-to(xs)
+					// 	flex-wrap: wrap
+					h3
+						font-size: 1em
+						font-weight: 300
+						text-transform: uppercase
+						+respond-to(xx)
+							line-height: 1
+							text-align: center
+							span
+								display: block
+
+
+@-webkit-keyframes mask-play 
+	from 
+		-webkit-mask-position: 0% 0
+		mask-position: 0% 0
+  
+	to 
+		-webkit-mask-position: 100% 0
+		mask-position: 100% 0
+  
+@keyframes mask-play 
+	from 
+		-webkit-mask-position: 0% 0
+		mask-position: 0% 0
+  
+	to 
+		-webkit-mask-position: 100% 0
+		mask-position: 100% 0
+  
+// Carrusel Gallery
+.carrusel-gallery
+	background: url(../images/carrusel/building-sprite.png) no-repeat -9999px -9999px
+	color: #FFF
+	position: relative
+	.page-carrusel
+		background: url(../images/carrusel/building-sprite-2.png) no-repeat -9999px -9999px
+
+		.project
+			&:nth-child(1) 
+				background-image: url(../images/carrusel/nature-1.jpg)
+
+
+			&:nth-child(2) 
+				background-image: url(../images/carrusel/nature-2.jpg)
+
+
+			&:nth-child(3) 
+				background-image: url(../images/carrusel/nature-3.jpg)
+
+
+			&:nth-child(4) 
+				background-image: url(../images/carrusel/nature-4.jpg)
+
+
+			&:nth-child(odd).hide 
+				-webkit-mask: url(../images/carrusel/building-sprite.png)
+				mask: url(../images/carrusel/building-sprite.png)
+				-webkit-mask-size: 7500% 100%
+				mask-size: 7500% 100%
+				-webkit-animation: mask-play 1.4s steps(74) forwards
+				animation: mask-play 1.4s steps(74) forwards
+
+
+			&:nth-child(even).hide 
+				-webkit-mask: url(../images/carrusel/building-sprite-2.png)
+				mask: url(../images/carrusel/building-sprite-2.png)
+				-webkit-mask-size: 8400% 100%
+				mask-size: 8400% 100%
+				-webkit-animation: mask-play 1.4s steps(83) forwards
+				animation: mask-play 1.4s steps(83) forwards
+
+
+// Carrusel Inicio
+.carrusel-inicio
+	background: url(../images/carrusel/building-sprite.png) no-repeat -9999px -9999px
+	color: #FFF
+	position: relative
+	height: 100%
+	main
+		height: 100%
+		position: relative
+
+	.page-carrusel 
+		background: url(../images/carrusel/building-sprite-2.png) no-repeat -9999px -9999px
+
+		.project
+			&:nth-child(1) 
+				background-image: url(../images/carrusel/nature-1.jpg)
+
+
+			&:nth-child(2) 
+				background-image: url(../images/carrusel/nature-2.jpg)
+
+
+			&:nth-child(3) 
+				background-image: url(../images/carrusel/nature-3.jpg)
+
+
+			&:nth-child(4) 
+				background-image: url(../images/carrusel/nature-4.jpg)
+
+
+			&:nth-child(odd).hide 
+				-webkit-mask: url(../images/carrusel/building-sprite.png)
+				mask: url(../images/carrusel/building-sprite.png)
+				-webkit-mask-size: 7500% 100%
+				mask-size: 7500% 100%
+				-webkit-animation: mask-play 1.4s steps(74) forwards
+				animation: mask-play 1.4s steps(74) forwards
+
+
+			&:nth-child(even).hide 
+				-webkit-mask: url(../images/carrusel/building-sprite-2.png)
+				mask: url(../images/carrusel/building-sprite-2.png)
+				-webkit-mask-size: 8400% 100%
+				mask-size: 8400% 100%
+				-webkit-animation: mask-play 1.4s steps(83) forwards
+				animation: mask-play 1.4s steps(83) forwards
+
+// Fallback
+.no-cssmask
+	.page-carrusel
+		.project.hide 
+			opacity: 0
+			-webkit-transition: opacity 1.4s ease
+			transition: opacity 1.4s ease
+			-webkit-mask: none !important
+			mask: none !important

@@ -1,0 +1,59 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	4.0 - Partners
+			# Extra
+
+	-----------------------------------------------------------------------------
+	*/
+
+/*  Partners
+	================================================ */
+.partners
+	background-color: $white
+	background-color: #F9F9F9
+	padding: 60px 0
+	// Title
+	.partners-title
+		margin-bottom: 40px
+		text-align: center
+		h2
+			font-size: 2.8em
+	// Cont
+	.partners-cont
+		align-items: center
+		display: flex
+		justify-content: center
+		+respond-to(sm)
+			// background-color: red
+			flex-wrap: wrap
+		+respond-to(xs)
+			// background-color: blue
+			flex-wrap: wrap
+		a
+			// background-color: red
+			display: block
+			// height: 50px
+			margin-right: 20px
+			width: 130px
+			+respond-to(sm)
+				width: 30%
+				&:nth-child(3n+3)
+					margin-right: 0
+			+respond-to(xs)
+				width: 45%
+				&:nth-child(2n+2)
+					margin-right: 0
+			+respond-to(xx)
+				// background-color: yellow
+				margin-right: 0
+				width: 100%
+			&:last-child
+				margin-right: 0
+			img
+				width: 100%
+				+transition(filter 0.3s)
+				// +transition(box-shadow 0.3s)
+				&:hover
+					// box-shadow: #222 0.2em 0.2em 1em
+					filter: grayscale(100%) brightness(135%) contrast(120%)

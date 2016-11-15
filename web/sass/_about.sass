@@ -1,0 +1,104 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	3.0 - About
+			# Extra
+
+	-----------------------------------------------------------------------------
+	*/
+
+/*  About
+	================================================ */
+.about
+	padding: 100px 0 240px
+	position: relative
+	&:after
+		// background-color: rgba(red,.1)
+		background-image: url(../images/lineas/linea-nosotros.png)
+		background-position: 50%
+		background-repeat: no-repeat
+		background-size: cover
+		bottom: 0
+		content: ""
+		height: 380px
+		position: absolute
+		width: 100%
+		z-index: 1
+		+respond-to(lg)
+			height: 600px
+	.about-desc
+		color: $purple-secundary
+		font-size: 1em
+		line-height: 1.6em
+		margin-bottom: 20px
+		position: relative
+		z-index: 2
+	.about-imagen
+		background-color: $white
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+		padding: 10px
+		position: relative
+		width: 100%
+		z-index: 2
+
+/*  Integrantes
+	================================================ */
+.integrantes
+	padding: 80px 0 60px
+	.row
+		.col-xs-12.col-sm-6.col-md-3
+			padding-left: 0
+			padding-rights: 0
+	// item
+	.integrantes-item
+		+border-radius(3px)
+		margin-bottom: 16px
+		overflow: hidden
+		position: relative
+		img.integrantes-item-img
+			+border-radius(3px)
+			display: block
+			width: 100%
+		.integrantes-item-mask
+			align-items: flex-end
+			background-color: rgba($purple-secundary,.6)
+			+border-radius(3px)
+			bottom: 0
+			display: flex
+			height: 100%
+			left: 0
+			opacity: 0
+			position: absolute
+			right: 0
+			top: -100%
+			width: 100%
+			z-index: -1
+			+transition(all 0.2s ease-in)
+			.integrantes-item-mask-desc
+				color: $white
+				padding: 0 0 30px 20px
+				h3,
+				h4
+					opacity: 0
+					+transition(opacity 0.3s ease-in)
+					-webkit-animation-delay: 6s
+					animation-delay: 6s
+				h3
+					font-size: 1.7em
+					font-weight: 500
+				h4
+					font-size: 1.3em
+					font-weight: 300
+		&:hover
+			.integrantes-item-mask
+				// display: flex
+				opacity: 1
+				top: 0
+				z-index: 2
+				+transition(all 0.2s ease-out)
+				h3,
+				h4
+					opacity: 1
+					+transition(opacity 0.3s ease-out)
+					-webkit-animation-delay: 6s
+					animation-delay: 6s

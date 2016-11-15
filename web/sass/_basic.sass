@@ -1,0 +1,170 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	2.0 - Basicos
+			# Basic
+			# Utility
+			# Loader
+
+	-----------------------------------------------------------------------------
+	*/
+
+/*  Basic
+	========================================================================== */
+
+*,
+*:after,
+*:before
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+::-moz-selection
+	color: $white
+	background: rgba($purple-secundary,.4)
+
+::selection
+	color: $white
+	background: rgba($purple-secundary,.4)
+
+*
+	margin: 0
+	padding: 0
+
+body
+	background-color: $white
+	font:
+		family: $font-secundary
+		size: 16px
+		weight: 300
+	color: $text-base
+
+/* a */
+a
+	color: $link
+	font:
+		family: $font-secundary
+		size: 16px
+		weight: 300
+	text-decoration: none
+	+transition(all 0.3s ease-in)
+	&:hover
+		color: $link-hover
+		text-decoration: none
+		+transition(all 0.3s ease-out)
+
+/* img */
+img
+	+transition(all 0.5s ease-in)
+
+/* Utility
+   ========================================================================== */
+/* h1 - h6 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6
+	font:
+		family: $font-primary
+		weight: 300
+	margin: 0
+	padding: 0
+h1,
+.h1
+	font-size: 2.8em
+h2,
+.h2
+	font-size: 2.4em
+h3,
+.h3
+	font-size: 2em
+h4,
+.h4
+	font-size: 1.6em
+h5,
+.h5
+	font-size: 1.4em
+h6,
+.h6
+	font-size: 1.2em
+
+/* hr */
+hr
+	border: none
+	margin: 0
+
+/* Wrap */
+.wrap
+	display: block
+
+/* Contend */
+.contend
+	margin: 0 auto
+	max-width: 1280px
+	position: relative
+	width: 90%
+
+/*  Loader
+	================================================ */
+.loader
+	align-items: center
+	background-color: $white
+	bottom: 0
+	display: flex
+	height: 100vh
+	left: 0
+	justify-content: center
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 999
+
+/*  Titles
+	================================================ */
+.title-gral
+	margin-bottom: 30px
+	position: relative
+	text-align: left
+	z-index: 2
+	h2
+		color: $purple-secundary
+		font-size: 2.188em
+		letter-spacing: 1px
+		text-transform: uppercase
+.title-secundary
+	color: $purple-secundary
+	margin-bottom: 40px
+	text-align: center
+	h2
+		font-size: 2.3em
+		letter-spacing: 1px
+		margin-bottom: 10px
+		text-transform: uppercase
+	hr
+		background-color: $purple-secundary
+		height: 1px
+		margin: 0 auto 19px
+		width: 136px
+	p
+		font-size: 1.05em
+		margin: 0 auto
+		max-width: 600px
+
+// Large
+// @include respond-to(lg)
+// Desktop
+// @include respond-to(md)
+// Tablet
+// @include respond-to(sm)
+// Mobile
+// @include respond-to(xs)
+// Extra mobile
+// @include respond-to(xx)

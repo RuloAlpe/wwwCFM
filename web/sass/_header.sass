@@ -1,0 +1,272 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	3.0 - Header
+			# Extra
+
+	-----------------------------------------------------------------------------
+	*/
+
+/*  Header
+	================================================ */
+header
+	background-color: $white
+	box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.20)
+	display: flex
+	height: 60px
+	position: relative
+	z-index: 999
+	.contend
+		align-items: center
+		// background-color: yellow
+		display: flex
+		height: 100%
+		justify-content: space-between
+		// width: 96%
+		+respond-to(lg)
+			width: 90%
+		+respond-to(md)
+			width: 96%
+		.header-logo,
+		.header-nav
+			align-items: center
+			display: flex
+			height: 100%
+			position: relative
+		// Logo
+		.header-logo
+			// background-color: red
+			justify-content: flex-start
+			width: 30%
+		// Nav
+		.header-nav
+			align-items: center
+			// background-color: green
+			display: flex
+			height: 100%
+			justify-content: flex-end
+			list-style: none
+			position: relative
+			width: 70%
+			+respond-to(sm)
+				display: none
+			+respond-to(xs)
+				display: none
+			li
+				align-items: center
+				display: flex
+				height: 100%
+				justify-content: flex-end
+				position: relative
+				&:before
+					background-color: $purple-secundary
+					+border-radius(50%)
+					content: ""
+					height: 4px
+					margin-top: -2px
+					opacity: .24
+					position: absolute
+					right: 0
+					top: 50%
+					width: 4px
+				&:nth-of-type(6)
+					&:before
+						opacity: 0
+				+respond-to(sm)
+					&:before
+						opacity: 0
+				+respond-to(xs)
+					&:before
+						opacity: 0
+				a
+					// background-color: rgba(yellow,.2)
+					color: $text-base
+					display: block
+					font-family: $font-primary
+					font-size: .7rem
+					line-height: 60px
+					margin: 0 1px
+					padding: 0 20px
+					position: relative
+					&:hover
+						color: $purple-secundary
+					&.active
+						// border-bottom: 3px solid $purple-secundary
+						&:after
+							background-color: $purple-secundary
+							bottom: 0
+							content: ""
+							height: 3px
+							left: 0
+							position: absolute
+							right: 0
+							width: 100%
+					&.header-nav-mi-cuenta
+						align-items: center
+						background-color: $purple-secundary
+						// +border-radius(4px)
+						color: $white
+						display: flex
+						height: 38px
+						justify-content: center
+						line-height: 1
+						overflow: hidden
+						padding: 8px 10px
+						width: 38px
+						+transition(width 0.3s ease-out)
+						i
+							font-size: 1em
+							// margin-left: 34px
+							+transition(margin 0.2s ease-in)
+				// cuenta
+				.header-nav-cuenta
+					background-color: transparent
+					display: flex
+					overflow: hidden
+					// box-shadow: 0 10px 150px rgba(0, 0, 0, .5)
+					// flex-wrap: wrap
+					border-radius: 2px
+					// Iniciar sesión
+					.header-nav-cuenta-log
+						background-color: rgba($purple-secundary,.6)
+						border: none
+						font-size: .95em
+						height: 40px
+						margin: 0
+						padding: 0
+						width: 0
+						color: #A9A9A9
+						+transition(width .3s ease-out)
+						+transition(padding .3s ease-out)
+						+respond-to(sm)
+							align-items: center
+							color: $white
+							display: flex
+							justify-content: center
+							padding: 0 4px
+							width: 130px
+						+respond-to(xs)
+							align-items: center
+							color: $white
+							display: flex
+							justify-content: center
+							padding: 0 4px
+							width: 130px
+						// Iniciar sesión - anim
+						&.header-nav-cuenta-log-anim
+							align-items: center
+							color: $white
+							display: flex
+							justify-content: center
+							padding: 0 4px
+							width: 130px
+							+transition(width .2s ease-in)
+							// height: 40px
+							// +respond-to(xs)
+							// 	font-size: 18px
+							// 	height: 75px
+							// 	padding: 0 20px
+					// Icon
+					.header-nav-cuenta-user
+						background-color: $purple-secundary
+						border: none
+						color: #fff
+						overflow: hidden
+						cursor: pointer
+						height: 40px
+						width: 40px
+						+respond-to(sm)
+							display: none
+						+respond-to(xs)
+							display: none
+						&:focus
+							outline: none
+						i
+							+transition(all 0.3s ease-in)
+
+				// Sub menu
+				ul
+					background-color: $purple-secundary
+					display: none
+					flex-wrap: wrap
+					left: -50%
+					padding: 2px 0
+					position: absolute
+					// right: 0
+					top: 100%
+					width: 170px
+					z-index: 103
+					+transition(all .3s ease)
+					li
+						padding: 2px
+						width: 100%
+						a
+							background-color: transparent
+							color: $white
+							line-height: 1
+							padding: 10px 20px
+							width: 100%
+							&:hover
+								background-color: rgba($white,.95)
+								color: $purple-secundary
+				&:hover
+					ul
+						display: flex
+
+			// Nav FULL
+			&.header-nav-full
+				background-color: rgba($purple-primary,.8)
+				bottom: 0
+				flex-direction: column
+				height: 100%
+				justify-content: center
+				left: 0
+				position: fixed
+				right: 0
+				top: 0
+				width: 100%
+				z-index: 300
+				+respond-to(sm)
+					display: flex
+				+respond-to(xs)
+					display: flex
+				li
+					a
+						color: $white
+						font-size: .96rem
+						&.active
+							border-bottom: 3px solid $purple-secundary
+						&:hover
+							color: rgba($white,.7)
+						&.header-nav-mi-cuenta
+							color: $white
+
+		// Nav TOGGLE
+		.header-nav-toggle
+			background-color: rgba(red,.7)
+			cursor: pointer
+			display: none
+			+respond-to(sm)
+				display: flex
+			+respond-to(xs)
+				display: flex
+		// Nav CLOSE
+		.header-nav-close
+			background-color: rgba(red,.7)
+			color: $white
+			cursor: pointer
+			display: none
+			padding: 4px
+			position: fixed
+			right: 5%
+			top: 5%
+			z-index: 304
+
+
+.publicidad
+	background-image: url(../images/chale.jpg)
+	background-position: bottom center
+	background-repeat: no-repeat
+	background-size: cover
+	height: 70px
+	width: 100%

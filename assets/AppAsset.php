@@ -18,12 +18,19 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/comite.css',
+    	'plugins/animsition/css/animsition.min.css',
+    	'plugins/ionicons/css/ionicons.min.css',
+    	'plugins/flexboxgrid/css/flexboxgrid.min.css'
     ];
     public $js = [
+    	'js/comite.js',
+    	'plugins/modernizr/js/modernizr-custom.js',
+    	'plugins/jquery/js/jquery.min.js',
+    	'plugins/animsition/js/animsition.min.js'
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset'
+        
     ];
 }
